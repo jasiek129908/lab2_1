@@ -8,12 +8,18 @@ import org.junit.jupiter.api.Test;
 
 class BinarySearchTest {
 
+    private SearchResult searchResult;
+
     @BeforeEach
-    void setUp() throws Exception {}
+    void setUp() throws Exception {
+    }
 
     @Test
-    void test() {
-        fail("Not yet implemented");
+    void valueIsInSequence() {
+        int array[] = {1, 10, 12, 14};
+        int searchValue = 10;
+        searchResult = BinarySearch.search(searchValue, array);
+        assertTrue(searchResult.isFound());
     }
 
 }
