@@ -2,6 +2,7 @@ package edu.iis.mto.bsearch;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +48,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void valueIsCentralElementInSequence() {
+    void valueIsCentralElementInOddSequence() {
         int array[] = {1, 10, 12};
         int searchValue = 10;
         searchResult = BinarySearch.search(searchValue, array);
@@ -61,4 +62,17 @@ class BinarySearchTest {
         searchResult = BinarySearch.search(searchValue, array);
         assertFalse(searchResult.isFound());
     }
+
+    @Test
+    void valueIsInEmptySequence() {
+        int array[] = {};
+        int searchValue = -2;
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    BinarySearch.search(searchValue, array);
+                });
+    }
+    
+
 }
