@@ -22,4 +22,12 @@ class BinarySearchTest {
         assertTrue(searchResult.isFound());
     }
 
+    @Test
+    void valueIsNotInSequence() {
+        int array[] = {1, 10, 12, 14};
+        int searchValue = 19;
+        searchResult = BinarySearch.search(searchValue, array);
+        assertFalse(searchResult.isFound());
+    }
+
 }
