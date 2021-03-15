@@ -21,6 +21,7 @@ class BinarySearchTest {
         int searchValue = 1;
         searchResult = BinarySearch.search(searchValue, array);
         assertTrue(searchResult.isFound());
+        assertEquals(1, searchResult.getPosition());
     }
 
     @Test
@@ -29,6 +30,7 @@ class BinarySearchTest {
         int searchValue = 19;
         searchResult = BinarySearch.search(searchValue, array);
         assertFalse(searchResult.isFound());
+        assertEquals(-1, searchResult.getPosition());
     }
 
     @Test
@@ -37,6 +39,7 @@ class BinarySearchTest {
         int searchValue = 1;
         searchResult = BinarySearch.search(searchValue, array);
         assertEquals(1, searchResult.getPosition());
+        assertEquals(true, searchResult.getPosition() != -1);
     }
 
     @Test
@@ -45,6 +48,7 @@ class BinarySearchTest {
         int searchValue = 14;
         searchResult = BinarySearch.search(searchValue, array);
         assertEquals(array.length, searchResult.getPosition());
+        assertEquals(true, searchResult.getPosition() != -1);
     }
 
     @Test
@@ -53,6 +57,7 @@ class BinarySearchTest {
         int searchValue = 10;
         searchResult = BinarySearch.search(searchValue, array);
         assertEquals((array.length / 2) + 1, searchResult.getPosition());
+        assertTrue(searchResult.isFound());
     }
 
     @Test
@@ -61,6 +66,7 @@ class BinarySearchTest {
         int searchValue = 19;
         searchResult = BinarySearch.search(searchValue, array);
         assertFalse(searchResult.isFound());
+        assertEquals(-1, searchResult.getPosition());
     }
 
     @Test
@@ -73,6 +79,6 @@ class BinarySearchTest {
                     BinarySearch.search(searchValue, array);
                 });
     }
-    
+
 
 }
