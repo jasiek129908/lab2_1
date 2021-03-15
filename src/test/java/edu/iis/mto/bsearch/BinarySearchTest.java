@@ -31,7 +31,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void valueIsFirstElementInArray() {
+    void valueIsFirstElementInSequence() {
         int array[] = {1, 10, 12, 14};
         int searchValue = 1;
         searchResult = BinarySearch.search(searchValue, array);
@@ -39,7 +39,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void valueIsLastElementInArray() {
+    void valueIsLastElementInSequence() {
         int array[] = {1, 10, 12, 14};
         int searchValue = 14;
         searchResult = BinarySearch.search(searchValue, array);
@@ -47,11 +47,18 @@ class BinarySearchTest {
     }
 
     @Test
-    void valueIsCentralElementInArray() {
+    void valueIsCentralElementInSequence() {
         int array[] = {1, 10, 12};
         int searchValue = 10;
         searchResult = BinarySearch.search(searchValue, array);
         assertEquals((array.length / 2) + 1, searchResult.getPosition());
     }
 
+    @Test
+    void valueIsNotInSequenceOfMultipleSize() {
+        int array[] = {12, 14, 20};
+        int searchValue = 19;
+        searchResult = BinarySearch.search(searchValue, array);
+        assertFalse(searchResult.isFound());
+    }
 }
