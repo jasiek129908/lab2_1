@@ -37,5 +37,13 @@ class BinarySearchTest {
         searchResult = BinarySearch.search(searchValue, array);
         assertEquals(1, searchResult.getPosition());
     }
-    
+
+    @Test
+    void valueIsLastElementInArray() {
+        int array[] = {1, 10, 12, 14};
+        int searchValue = 14;
+        searchResult = BinarySearch.search(searchValue, array);
+        assertEquals(array.length, searchResult.getPosition());
+    }
+
 }
