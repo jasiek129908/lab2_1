@@ -30,4 +30,12 @@ class BinarySearchTest {
         assertFalse(searchResult.isFound());
     }
 
+    @Test
+    void valueIsFirstElementInArray() {
+        int array[] = {1, 10, 12, 14};
+        int searchValue = 1;
+        searchResult = BinarySearch.search(searchValue, array);
+        assertEquals(1, searchResult.getPosition());
+    }
+    
 }
